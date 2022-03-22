@@ -1,0 +1,36 @@
+<h5>Edit Story</h5>
+<div class="row">
+    <!-- 'POST' or 'Get' Method only allowed in <form>, so Need Method Override -->
+    <form action="/stories/{{ story._id }}" method="POST" class="col s12">
+        <!--Method Override -->
+        <input type="hidden" name="_method" value="PUT">
+        <div class="row">
+            <div class="input-field col s12">
+                <input type="text" name="title" value="{{ story.title }}">
+                <label for="title">Title</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <select name="status" id="status">
+                    {{#select story.status }}
+                    <option value="public" selected>Public</option>
+                    <option value="private">Private</option>
+                    {{/select }}
+                </select>
+                <label for="status">Status</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <h6>Tell us your story</h6>  
+                <textarea name="body" id="body" class="materialize-textarea">{{ story.body }}</textarea>
+                <!-- <label for="body">Tell Us Your Story</label> -->
+            </div>
+        </div>
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <a href="/dashboard" class="btn orange">Cancel</a>
+        </div>
+    </form>
+</div>
