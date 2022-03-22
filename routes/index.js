@@ -5,7 +5,7 @@ const Story = require('../models/Story')
 const router = express.Router()
 
 /**
- * @desc Landing page and Log in
+ * @desc Show landing and login page
  * @route GET /
  * @access Public  
  */
@@ -19,7 +19,7 @@ router.get('/', ensureGuest, (req, res) => {
 })
 
 /**
- * @desc Dashboard page and Get Stories
+ * @desc Get logged in user's stories
  * @route GET /dashboard
  * @access Private
  */

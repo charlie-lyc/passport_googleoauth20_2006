@@ -7,7 +7,7 @@ const Story = require('../models/Story')
 const router = express.Router()
 
 /**
- * @desc Show all stories
+ * @desc Get all stories
  * @route GET /stories
  * @access Private
  */
@@ -28,7 +28,7 @@ router.get('/', ensureAuth, async (req, res) => {
 })
 
 /**
- * @desc Show add form page
+ * @desc Show add story form page
  * @route GET /stories/add
  * @access Private
  */
@@ -99,7 +99,7 @@ router.get('/user/:id', ensureAuth, async (req, res) => {
 })
 
 /**
- * @desc Show edit form page
+ * @desc Show edit story form page
  * @route GET /stories/edit/:id
  * @access Private
  */
